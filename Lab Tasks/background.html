@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<ody lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lab 3 & 4-CSS Fundamentals: Styling and Visual Design-Lab Tasks</title>
+
+    <style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+  
+      body {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+      }
+  
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: rgb(196, 92, 196);
+        color: white;
+        padding: 10px 20px;
+        position: relative;
+      }
+  
+      header h1 {
+        font-size: 20px;
+      }
+  
+      nav ul {
+        display: flex;
+        list-style: none;
+      }
+  
+      nav li {
+        position: relative;
+      }
+  
+      nav a {
+        text-decoration: none;
+        color: white;
+        padding: 8px 12px;
+        display: block;
+        font-size: 14px;
+        transition: 0.3s;
+      }
+  
+      nav a:hover,
+      nav a:focus {
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff0ff;
+      }
+  
+      /* Dropdown */
+      nav li ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: rgb(196, 92, 196);
+        list-style: none;
+        display: none;
+        min-width: 150px;
+      }
+  
+      nav li:hover > ul {
+        display: block;
+      }
+  
+      nav li ul li {
+        margin: 0;
+      }
+  
+      nav li ul a {
+        padding: 10px;
+        font-size: 13px;
+      }
+  
+      /* Toggle Button */
+      .menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+      }
+  
+      .menu-toggle span {
+        height: 3px;
+        width: 25px;
+        background: white;
+        margin: 4px 0;
+        transition: 0.3s;
+      }
+      .heading {
+        margin: 20px;
+        text-align: center;
+        font-size: 30px;
+      } 
+      
+    /* Background Gallery */
+    /* Solid Color */
+    .solid-color-bg h2{
+      margin-left: 2%;
+    }
+    .solid-color-bg .solid{
+        width: 200px;
+        height: 200px;
+        margin:10px auto;
+        background-color: yellowgreen;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    /* Image backgrounds */
+    .image-bg .container{
+      width:100%;
+        max-width:500px;
+        height:200px;
+        margin:10px auto;
+        background-color: yellowgreen;
+        font-size: 20px;
+        font-weight: bold;
+        background-image: url('images/bg1.jpg');
+    }
+    /* Repeat in both directions */
+.image-bg .repeat{
+background-repeat:repeat;
+}
+/* No repeat */
+.image-bg .no-repeat{
+background-repeat:no-repeat;
+background-position:center;
+}
+/* Repeat horizontally */
+.image-bg .repeat-x{
+background-repeat:repeat-x;
+}
+/* Repeat vertically */
+.image-bg .repeat-y{
+background-repeat:repeat-y;
+}
+/* Linear and radial gradients */
+.gradients .container{
+    width: 100%;
+    height: 200px;
+    margin-top: 20px;
+}
+.gradients .linear{
+background: linear-gradient(to right, red, yellow);
+}
+/* Radial Gradient */
+.gradients .radial{
+background: radial-gradient(circle, blue, white);
+}
+
+/* Multiple background layers */
+.bg-layers .multi-bg{
+width:100%;
+max-width:350px;
+height:200px;
+margin:20px auto;
+color:white;
+font-size:20px;
+background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),url("images/bg1.jpg");
+background-size:cover;
+background-position:center;  
+}
+/* Background Blend Modes */
+.blend{
+  width:100%;
+max-width:350px;
+height:200px;
+margin:10px auto;
+
+color:blueviolet;
+font-size:20px;
+background-image:linear-gradient(red, blue),url("images/bg1.jpg");
+background-blend-mode: luminosity; /* blend effect */
+background-size:cover;
+background-position:center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+        nav {
+          position: absolute;
+          top: 60px;
+          left: -250px;
+          width: 200px;
+          background: rgb(196, 92, 196);
+          height: calc(100vh - 60px);
+          transition: 0.3s;
+          overflow-y: auto;
+          padding-top: 10px;
+          z-index: 1000;
+        }
+  
+        nav ul {
+          flex-direction: column;
+        }
+  
+        nav li {
+          margin: 0;
+        }
+  
+        nav li ul {
+          position: static;
+        }
+  
+        #menu-toggle:checked + nav {
+          left: 0;
+        }
+  
+        .menu-toggle {
+          display: flex;
+        }
+      
+      .heading {
+        margin: 20px;
+        text-align: center;
+        font-size: 22px;
+      } 
+.solid-color-bg,
+.image-bg,
+.gradients,
+.bg-layers{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+}
+
+    </style>
+    </head>
+<body>
+    <header>
+        <h1>Navigation Bar</h1>
+        <!-- Toggle Button -->
+        <label for="menu-toggle" class="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
+        <input type="checkbox" id="menu-toggle" style="display:none;" />
+    
+        <nav>
+          <ul>
+            <li>
+                <a href="#">Lab Exercise ▼</a>
+                <ul>
+                  <li><a href="/Lab Exercises/index.html">Exercises</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href="#">Lab Tasks ▼</a>
+                <ul>
+                    <li><a href="selectors.html">Selectors</a></li>
+                    <li><a href="typography.html">Typography</a></li>
+                    <li><a href="background.html">Background</a></li>
+                    <li><a href="image.html">Gallery</a></li>
+                    <li><a href="buttons.html">Buttons</a></li>
+                    <li><a href="form.html">Form</a></li>
+                    <li><a href="cards.html">Cards</a></li>
+                    <li><a href="navigation-menu.html">Navigation</a></li>
+                    <li><a href="transforms.html">Transforms</a></li>
+                    <li><a href="effects.html">Effects</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="course.html">Course Table</a></li>
+                </ul>
+              </li>
+        </nav> 
+      </header>
+
+    <h1 class="heading">This is Background Page of Lab Task</h1>
+   <h1 class="heading">Task 3: Background Gallery</h1>
+   <!-- Background Gallery -->
+   <!-- Solid Color Backgrounds -->
+   <div class="solid-color-bg">
+    <h2>Solid Color Backgrounds</h2>
+<div class="solid">
+    <p>This is the solid background</p>
+</div>
+<!-- Image backgrounds with Different Repeat Patterns -->
+<div class="image-bg">
+<h2>Image Backgrounds</h2>
+<div class="container repeat">Repeat in All directions</div>
+<div class="container no-repeat">No Repeat in any direction</div>
+<div class="container repeat-x">Repeat X in horizontally </div>
+<div class="container repeat-y">Repeat Y in vertically direction</div>
+   </div>
+   <!-- Linear and Radial Gradients -->
+   <div class="gradients">
+    <h2>Linear and Radial Gradients</h2>
+<p class="container linear">This is the example of linear gradients.</p>
+<p class="container radial">This is the example of radial gradients.</p>
+   </div>
+   <!-- Multiple Background Layers -->
+   <div class="bg-layers">
+    <h2>Multiple Background Layers</h2>
+    <p class="multi-bg">This is the example of multiple bg layers</p>
+   </div>
+   <!-- Background Blend Modes -->
+   <h2>Background Blend Modes</h2>
+   <p class="blend">This is para of blend modes.</p>
+</body>
+</html>
