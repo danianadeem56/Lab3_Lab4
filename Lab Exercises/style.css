@@ -53,11 +53,9 @@
 .exercise-3 input[type="text"] {
   background-color: lightblue;
 }
-
 .exercise-3 input[type="password"] {
   background-color: lightseagreen;
 }
-
 /* Partial value matching ([attribute*="value"]) */
 .exercise-3 a[href*="google"] {
   color: plum;
@@ -67,7 +65,6 @@
 .exercise-3 a[href^="https"] {
   font-weight: bold;
 }
-
 /* Ends with ([attribute$="value"]) */
 .exercise-3 img[src$=".jpg"] {
   border-radius: 10px;
@@ -140,7 +137,6 @@
 .exercise-5 input:disabled {
   background-color: lightgray;
 }
-
 /* Structural pseudo-classes */
 .exercise-5 li:first-child {
   font-weight: bold;
@@ -153,7 +149,6 @@
 .exercise-5 li:nth-child(2) {
   color: red;
 }
-
 /* Content-based pseudo-classes */
 .exercise-5 div:empty {
   height: 50px;
@@ -629,8 +624,7 @@
   color:white;
   text-align:center;
   line-height:150px;
-  margin:20px;
-  
+  margin:20px;  
   transition:0.4s;
   color: black;
   }
